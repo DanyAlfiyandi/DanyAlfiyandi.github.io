@@ -114,6 +114,16 @@ a {
     gap: 3rem;
 }
 
+
+.nav ul li a {
+    text-decoration: none; /* Menghapus garis bawah default */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+}
+
+.nav ul li a:hover, .nav ul li a:focus {
+    transform: scale(1.1); /* Mengembangkan tautan */
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -230,6 +240,7 @@ nav ul li a {
     text-align: center;
     background: var(--primaryBackgroundColor);
     border-radius: var(--itemBorderRadius);
+    transition: transform 0.3s ease;
 }
 
 .service h4 {
@@ -248,6 +259,10 @@ nav ul li a {
 
 .service-icon svg {
     fill: var(--primaryIconColor);
+}
+
+.service:hover {
+    transform: scale(1.05);
 }
 
 /* Portfolio section */

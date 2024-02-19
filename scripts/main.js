@@ -55,5 +55,5 @@ resumeLink.addEventListener('click', e => {
     e.preventDefault();
 
     // Replace 'resume.pdf' with the actual path to your resume
-    window.open('resume.pdf', '_blank');
+    window.open('/Resume.pdf', '_blank');
 });

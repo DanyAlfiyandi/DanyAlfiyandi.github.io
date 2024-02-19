@@ -1,38 +1,43 @@
-//toggle & responsive nav
 const navSlide = () => {
     const burger = document.querySelector(".burger");
     const navLists = document.querySelector("nav");
-    const nav = document.querySelector('.nav ul');
     const navLinks = document.querySelectorAll('.nav ul li');
 
     burger.addEventListener("click", () => {
         navLists.classList.toggle("nav-active");
         burger.classList.toggle("toggle-burger");
     });
-      // Animate Links
-      navLinks.forEach((link, index) => {
+
+    // Animate Links
+    navLinks.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
         } else {
             link.style.animation = `navLinkFade 1s ease forwards ${index / 7 + 0.5}s`;
         }
     });
-
 };
 
 navSlide();
+
 const scrollLinks = document.querySelectorAll('.nav ul li a');
 
 scrollLinks.forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
 
-        const target = document.querySelector(link.getAttribute('href'));
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        const yOffset = -60; // Optional offset to adjust scroll position
 
-        window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-        });
+        if (target) {
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -43,3 +48,12 @@ window.onbeforeunload = () => {
     }
 };
 
+// Resume Link
+const resumeLink = document.querySelector('.resume-link');
+
+resumeLink.addEventListener('click', e => {
+    e.preventDefault();
+
+    // Replace 'resume.pdf' with the actual path to your resume
+    window.open('resume.pdf', '_blank');
+});

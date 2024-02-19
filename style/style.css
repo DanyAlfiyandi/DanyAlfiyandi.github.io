@@ -54,7 +54,7 @@ a {
 }
 
 /* button */
-.btn {
+.resume-link {
     padding: 1 rem 1.5rem;
     background-color: white;
     border: 1.5px solid var(--borderColor);
@@ -62,7 +62,7 @@ a {
     transition: .2s ease-in-out;
 }
 
-.btn:hover {
+.resume-link:hover {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 

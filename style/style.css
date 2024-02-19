@@ -121,7 +121,7 @@ a {
 }
 
 .nav ul li a:hover, .nav ul li a:focus {
-    transform: scale(1.7); /* Mengembangkan tautan */
+    transform: scale(1.2); /* Mengembangkan tautan */
 }
 
 .logo {
